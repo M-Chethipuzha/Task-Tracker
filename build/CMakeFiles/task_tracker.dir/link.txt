@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -Wpedantic -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/task_tracker.dir/src/main.cpp.o CMakeFiles/task_tracker.dir/src/task.cpp.o CMakeFiles/task_tracker.dir/src/task_manager.cpp.o CMakeFiles/task_tracker.dir/src/json_parser.cpp.o CMakeFiles/task_tracker.dir/src/command_handler.cpp.o -o bin/task_tracker
