@@ -904,6 +904,7 @@ CMakeFiles/task_tracker.dir/src/command_handler.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__split_buffer \
   /Users/mathew/Documents/Projects/task-tracker/src/task_manager.h \
   /Users/mathew/Documents/Projects/task-tracker/src/task.h \
+  /Users/mathew/Documents/Projects/task-tracker/src/date_utils.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \

@@ -198,6 +198,30 @@ src/command_handler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_tracker.dir/build.make CMakeFiles/task_tracker.dir/src/command_handler.cpp.s
 .PHONY : src/command_handler.cpp.s
 
+src/date_utils.o: src/date_utils.cpp.o
+.PHONY : src/date_utils.o
+
+# target to build an object file
+src/date_utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_tracker.dir/build.make CMakeFiles/task_tracker.dir/src/date_utils.cpp.o
+.PHONY : src/date_utils.cpp.o
+
+src/date_utils.i: src/date_utils.cpp.i
+.PHONY : src/date_utils.i
+
+# target to preprocess a source file
+src/date_utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_tracker.dir/build.make CMakeFiles/task_tracker.dir/src/date_utils.cpp.i
+.PHONY : src/date_utils.cpp.i
+
+src/date_utils.s: src/date_utils.cpp.s
+.PHONY : src/date_utils.s
+
+# target to generate assembly for a file
+src/date_utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_tracker.dir/build.make CMakeFiles/task_tracker.dir/src/date_utils.cpp.s
+.PHONY : src/date_utils.cpp.s
+
 src/json_parser.o: src/json_parser.cpp.o
 .PHONY : src/json_parser.o
 
@@ -310,6 +334,9 @@ help:
 	@echo "... src/command_handler.o"
 	@echo "... src/command_handler.i"
 	@echo "... src/command_handler.s"
+	@echo "... src/date_utils.o"
+	@echo "... src/date_utils.i"
+	@echo "... src/date_utils.s"
 	@echo "... src/json_parser.o"
 	@echo "... src/json_parser.i"
 	@echo "... src/json_parser.s"

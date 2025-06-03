@@ -1,120 +1,350 @@
-# Build directories
+# Task Tracker Project .gitignore
+
+# =============================================================================
+# Build Artifacts
+# =============================================================================
+
+# CMake build directories
 build/
-bin/
-lib/
-obj/
+Build/
+BUILD/
+cmake-build-*/
 out/
 
-# CMake generated files
+# CMake cache and generated files
 CMakeCache.txt
 CMakeFiles/
+CMakeScripts/
 cmake_install.cmake
+install_manifest.txt
 Makefile
 *.cmake
 !CMakeLists.txt
 
-# Compiled binaries and libraries
+# Compiled executables
+task_tracker
+task_tracker.exe
 *.exe
 *.out
 *.app
-*.dll
-*.so
-*.dylib
-*.a
-*.lib
 
-# Object files
+# Object files and libraries
 *.o
 *.obj
-*.ko
-*.elf
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# Static analysis outputs
+*.gcno
+*.gcda
+*.gcov
 
-# Precompiled Headers
-*.gch
-*.pch
+# =============================================================================
+# Task Tracker Specific Files
+# =============================================================================
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# User task data (should not be tracked in version control)
+tasks.json
+*.json.bak
+*.json.backup
+
+# Log files
+*.log
+logs/
+
+# Test data files
+test_tasks.json
+sample_tasks.json
+
+# =============================================================================
+# IDE and Editor Files
+# =============================================================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.vcxproj.filters
+*.sln.docstates
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# CLion / IntelliJ IDEA
+.idea/
+cmake-build-*/
+*.iml
+*.iws
+*.ipr
+
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+
+# Qt Creator
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+*.qm
+*.prl
+
+# Code::Blocks
+*.cbp
+*.layout
+*.depend
+
+# Dev-C++
+*.dev
+
+# Eclipse CDT
+.cproject
+.project
+.settings/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# =============================================================================
+# Operating System Files
+# =============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# Debugging and Profiling
+# =============================================================================
+
+# GDB
+.gdb_history
+gdb.txt
+
+# Valgrind
+*.valgrind
+vgcore.*
+callgrind.out.*
+cachegrind.out.*
+massif.out.*
 
 # Core dumps
 core
 core.*
+*.core
 
-# IDE and editor files
-.vscode/
-.vs/
-*.swp
-*.swo
-*~
-.idea/
-*.user
-*.vcxproj.user
-*.suo
-*.userosscache
-*.sln.docstates
+# AddressSanitizer
+*.asan
 
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-.directory
+# ThreadSanitizer
+*.tsan
 
-# Log files
-*.log
+# =============================================================================
+# Documentation
+# =============================================================================
 
-# Temporary files
-*.tmp
-*.temp
-*~
-.#*
+# Generated documentation
+docs/html/
+docs/latex/
+docs/xml/
+Doxygen/
+*.dox
 
-# Runtime data files (user's task data)
-tasks.json
-*.json
-!sample_tasks.json
-!examples/*.json
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.lb
 
-# Package managers
-conandata.txt
+# =============================================================================
+# Package Managers and Dependencies
+# =============================================================================
+
+# Conan
+conandata.yml
+conanfile.py
 conaninfo.txt
 conanbuildinfo.*
+conan.lock
 
-# Coverage reports
-*.gcov
-*.gcda
-*.gcno
-coverage.info
-coverage/
+# vcpkg
+vcpkg_installed/
+.vcpkg-root
 
-# Profiling data
-*.prof
+# CPM (CMake Package Manager)
+CPM_modules/
 
-# Static analysis
-cppcheck.xml
+# FetchContent
+_deps/
+
+# =============================================================================
+# Backup and Temporary Files
+# =============================================================================
 
 # Backup files
 *.bak
 *.backup
 *.old
+*.orig
+*.save
+*~
 
-# Compressed files (unless they're resources)
-*.tar.gz
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Archive files (usually shouldn't be in source control)
 *.zip
-*.7z
+*.tar
+*.tar.gz
+*.tar.bz2
+*.tar.xz
 *.rar
+*.7z
 
-# Local configuration files
-config.local.*
-.env
+# =============================================================================
+# Testing and Coverage
+# =============================================================================
+
+# Test results
+test_results/
+test_output/
+Testing/
+
+# Coverage reports
+coverage/
+coverage.info
+*.coverage
+htmlcov/
+.coverage
+.coverage.*
+
+# Catch2 test framework
+catch2_generated_headers/
+
+# =============================================================================
+# Miscellaneous
+# =============================================================================
+
+# Patches
+*.patch
+*.diff
+
+# Tags files
+tags
+TAGS
+.tags
+.TAGS
+
+# ctags
+.ctags
+
+# Ignore anything in a directory named "ignore"
+ignore/
+
+# Personal notes and TODO files
+TODO.txt
+NOTES.txt
+notes/
+
+# Compiled Python files (in case of any Python scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Node.js (in case of any Node.js tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =============================================================================
+# Custom Additions
+# =============================================================================
+
+# Add any project-specific files or patterns below this line
+# Example:
+# my_custom_config.conf
+# secrets/

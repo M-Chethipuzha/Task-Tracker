@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/Users/mathew/Documents/Projects/task-tracker/src
 
-CXX_FLAGSarm64 =  -Wall -Wextra -Wpedantic -std=c++17 -arch arm64
+CXX_FLAGSarm64 =  -Wall -Wextra -Wpedantic -std=c++20 -arch arm64
 
-CXX_FLAGS =  -Wall -Wextra -Wpedantic -std=c++17 -arch arm64
+CXX_FLAGS =  -Wall -Wextra -Wpedantic -std=c++20 -arch arm64
 

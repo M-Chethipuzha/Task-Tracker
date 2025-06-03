@@ -85,12 +85,12 @@ clean: CMakeFiles/task_tracker.dir/clean
 CMakeFiles/task_tracker.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_tracker.dir/build.make CMakeFiles/task_tracker.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_tracker.dir/build.make CMakeFiles/task_tracker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/mathew/Documents/Projects/task-tracker/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target task_tracker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/mathew/Documents/Projects/task-tracker/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target task_tracker"
 .PHONY : CMakeFiles/task_tracker.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/task_tracker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mathew/Documents/Projects/task-tracker/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mathew/Documents/Projects/task-tracker/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/task_tracker.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mathew/Documents/Projects/task-tracker/build/CMakeFiles 0
 .PHONY : CMakeFiles/task_tracker.dir/rule
@@ -102,7 +102,7 @@ task_tracker: CMakeFiles/task_tracker.dir/rule
 # codegen rule for target.
 CMakeFiles/task_tracker.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_tracker.dir/build.make CMakeFiles/task_tracker.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/mathew/Documents/Projects/task-tracker/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target task_tracker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/mathew/Documents/Projects/task-tracker/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Finished codegen for target task_tracker"
 .PHONY : CMakeFiles/task_tracker.dir/codegen
 
 # clean rule for target.

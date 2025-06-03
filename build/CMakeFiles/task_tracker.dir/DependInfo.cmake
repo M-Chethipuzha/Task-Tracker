@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/mathew/Documents/Projects/task-tracker/src/command_handler.cpp" "CMakeFiles/task_tracker.dir/src/command_handler.cpp.o" "gcc" "CMakeFiles/task_tracker.dir/src/command_handler.cpp.o.d"
+  "/Users/mathew/Documents/Projects/task-tracker/src/date_utils.cpp" "CMakeFiles/task_tracker.dir/src/date_utils.cpp.o" "gcc" "CMakeFiles/task_tracker.dir/src/date_utils.cpp.o.d"
   "/Users/mathew/Documents/Projects/task-tracker/src/json_parser.cpp" "CMakeFiles/task_tracker.dir/src/json_parser.cpp.o" "gcc" "CMakeFiles/task_tracker.dir/src/json_parser.cpp.o.d"
   "/Users/mathew/Documents/Projects/task-tracker/src/main.cpp" "CMakeFiles/task_tracker.dir/src/main.cpp.o" "gcc" "CMakeFiles/task_tracker.dir/src/main.cpp.o.d"
   "/Users/mathew/Documents/Projects/task-tracker/src/task.cpp" "CMakeFiles/task_tracker.dir/src/task.cpp.o" "gcc" "CMakeFiles/task_tracker.dir/src/task.cpp.o.d"

@@ -15,14 +15,22 @@ public:
     // Constructor
     explicit TaskManager(const std::string& filename = "tasks.json");
 
-    // Basic CRUD operations
-    void addTask(const std::string& description);
-    void updateTask(int id, const std::string& status);
+    // Enhanced CRUD operations
+    void addTask(const std::string& description, const std::string& priority = "medium", 
+                 const std::string& due_date = "");
+    void updateTask(int id, const std::string& description = "", 
+                   const std::string& status = "", const std::string& priority = "", 
+                   const std::string& due_date = "");
     void deleteTask(int id);
     
     // Listing operations
     std::vector<Task> getAllTasks() const;
     std::vector<Task> getTasksByStatus(const std::string& status) const;
+    std::vector<Task> getTasksByPriority(const std::string& priority) const;
+    std::vector<Task> searchTasksByKeyword(const std::string& keyword) const;
+    std::vector<Task> getTasksDueBy(const std::string& date) const;
+    std::vector<Task> getOverdueTasks() const;
+    std::vector<Task> getTasksDueToday() const;
     
     // File operations
     void loadTasks();

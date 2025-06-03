@@ -38,6 +38,38 @@ std::string unescapeJSON(const std::string& str) {
     return unescaped;
 }
 
+std::string extractStringField(const std::string& objectStr, const std::string& fieldName) {
+    std::string searchStr = "\"" + fieldName + "\":";
+    size_t fieldPos = objectStr.find(searchStr);
+    if (fieldPos == std::string::npos) return "";
+    
+    size_t quoteStart = objectStr.find('"', fieldPos + searchStr.length());
+    if (quoteStart == std::string::npos) return "";
+    
+    size_t quoteEnd = objectStr.find('"', quoteStart + 1);
+    if (quoteEnd == std::string::npos) return "";
+    
+    return unescapeJSON(objectStr.substr(quoteStart + 1, quoteEnd - quoteStart - 1));
+}
+
+int extractIntField(const std::string& objectStr, const std::string& fieldName) {
+    std::string searchStr = "\"" + fieldName + "\":";
+    size_t fieldPos = objectStr.find(searchStr);
+    if (fieldPos == std::string::npos) return 0;
+    
+    size_t valueStart = objectStr.find_first_not_of(" \t", fieldPos + searchStr.length());
+    if (valueStart == std::string::npos) return 0;
+    
+    size_t valueEnd = objectStr.find_first_of(",}", valueStart);
+    if (valueEnd == std::string::npos) return 0;
+    
+    try {
+        return std::stoi(objectStr.substr(valueStart, valueEnd - valueStart));
+    } catch (const std::exception&) {
+        return 0;
+    }
+}
+
 std::vector<Task> parseTasksFromJSON(const std::string& jsonContent) {
     std::vector<Task> tasks;
     
@@ -45,7 +77,6 @@ std::vector<Task> parseTasksFromJSON(const std::string& jsonContent) {
         return tasks;
     }
 
-    // Simple JSON parser for our specific format
     size_t pos = 0;
     
     // Find the opening bracket
@@ -83,39 +114,19 @@ std::vector<Task> parseTasksFromJSON(const std::string& jsonContent) {
         std::string objectStr = jsonContent.substr(objStart + 1, objEnd - objStart - 1);
         
         // Parse the object
-        int id = 0;
-        std::string description, status;
-        
-        // Simple field extraction
-        size_t idPos = objectStr.find("\"id\":");
-        if (idPos != std::string::npos) {
-            size_t valueStart = objectStr.find_first_not_of(" \t", idPos + 5);
-            size_t valueEnd = objectStr.find_first_of(",}", valueStart);
-            if (valueStart != std::string::npos && valueEnd != std::string::npos) {
-                id = std::stoi(objectStr.substr(valueStart, valueEnd - valueStart));
-            }
-        }
-
-        size_t descPos = objectStr.find("\"description\":");
-        if (descPos != std::string::npos) {
-            size_t quoteStart = objectStr.find('"', descPos + 14);
-            size_t quoteEnd = objectStr.find('"', quoteStart + 1);
-            if (quoteStart != std::string::npos && quoteEnd != std::string::npos) {
-                description = unescapeJSON(objectStr.substr(quoteStart + 1, quoteEnd - quoteStart - 1));
-            }
-        }
-
-        size_t statusPos = objectStr.find("\"status\":");
-        if (statusPos != std::string::npos) {
-            size_t quoteStart = objectStr.find('"', statusPos + 9);
-            size_t quoteEnd = objectStr.find('"', quoteStart + 1);
-            if (quoteStart != std::string::npos && quoteEnd != std::string::npos) {
-                status = objectStr.substr(quoteStart + 1, quoteEnd - quoteStart - 1);
-            }
-        }
+        int id = extractIntField(objectStr, "id");
+        std::string description = extractStringField(objectStr, "description");
+        std::string status = extractStringField(objectStr, "status");
+        std::string priority = extractStringField(objectStr, "priority");
+        std::string due_date = extractStringField(objectStr, "due_date");
+        std::string created_date = extractStringField(objectStr, "created_date");
 
         if (id > 0 && !description.empty()) {
-            tasks.emplace_back(id, description, status);
+            Task task(id, description, priority.empty() ? "medium" : priority, due_date, created_date);
+            if (!status.empty()) {
+                task.setStatus(status);
+            }
+            tasks.push_back(task);
         }
 
         pos = objEnd + 1;
@@ -138,7 +149,10 @@ std::string tasksToJSON(const std::vector<Task>& tasks) {
         ss << "  {\n";
         ss << "    \"id\": " << task.getId() << ",\n";
         ss << "    \"description\": \"" << escapeJSON(task.getDescription()) << "\",\n";
-        ss << "    \"status\": \"" << task.getStatus() << "\"\n";
+        ss << "    \"status\": \"" << task.getStatus() << "\",\n";
+        ss << "    \"priority\": \"" << task.getPriority() << "\",\n";
+        ss << "    \"due_date\": \"" << task.getDueDate() << "\",\n";
+        ss << "    \"created_date\": \"" << task.getCreatedDate() << "\"\n";
         ss << "  }";
         
         if (i < tasks.size() - 1) {
