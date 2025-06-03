@@ -1,1 +1,120 @@
+# Build directories
 build/
+bin/
+lib/
+obj/
+out/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# Compiled binaries and libraries
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+
+# Object files
+*.o
+*.obj
+*.ko
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Core dumps
+core
+core.*
+
+# IDE and editor files
+.vscode/
+.vs/
+*.swp
+*.swo
+*~
+.idea/
+*.user
+*.vcxproj.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.directory
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*~
+.#*
+
+# Runtime data files (user's task data)
+tasks.json
+*.json
+!sample_tasks.json
+!examples/*.json
+
+# Package managers
+conandata.txt
+conaninfo.txt
+conanbuildinfo.*
+
+# Coverage reports
+*.gcov
+*.gcda
+*.gcno
+coverage.info
+coverage/
+
+# Profiling data
+*.prof
+
+# Static analysis
+cppcheck.xml
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Compressed files (unless they're resources)
+*.tar.gz
+*.zip
+*.7z
+*.rar
+
+# Local configuration files
+config.local.*
+.env
