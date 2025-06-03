@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # Project configuration
-project(TaskTracker VERSION 2.0.0 LANGUAGES CXX)
+project(TaskTracker VERSION 3.0.0 LANGUAGES CXX)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 20)
@@ -23,6 +23,8 @@ set(SOURCES
     src/json_parser.cpp
     src/command_handler.cpp
     src/date_utils.cpp
+    src/filter_utils.cpp
+    src/interactive_mode.cpp
 )
 
 # Create executable

@@ -44,6 +44,11 @@ public:
     int getDaysUntilDue() const;
     bool matchesKeyword(const std::string& keyword) const;
     std::string toString() const;
+    
+    // Comparison operators for sorting
+    bool operator<(const Task& other) const;
+    bool operator>(const Task& other) const;
+    bool operator==(const Task& other) const;
 };
 
 #endif

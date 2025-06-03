@@ -33,8 +33,18 @@ add_executable(test_enhanced_task
 )
 target_include_directories(test_enhanced_task PRIVATE ../src)
 
+# Test executable for FilterUtils
+add_executable(test_filter_utils
+    test_filter_utils.cpp
+    ../src/filter_utils.cpp
+    ../src/task.cpp
+    ../src/date_utils.cpp
+)
+target_include_directories(test_filter_utils PRIVATE ../src)
+
 # Add tests
 add_test(NAME TaskTests COMMAND test_task)
 add_test(NAME JSONParserTests COMMAND test_json_parser)
 add_test(NAME DateUtilsTests COMMAND test_date_utils)
 add_test(NAME EnhancedTaskTests COMMAND test_enhanced_task)
+add_test(NAME FilterUtilsTests COMMAND test_filter_utils)
