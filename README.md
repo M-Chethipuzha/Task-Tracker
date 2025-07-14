@@ -1,8 +1,8 @@
-# Task Tracker - Phase 3 (Advanced Filtering, Sorting & Interactive Mode)
+# Task Tracker 
 
 A comprehensive command-line interface (CLI) application for managing daily tasks with advanced filtering, sorting capabilities, and an interactive shell mode for seamless task management.
 
-## 🆕 New Features in Phase 3
+## 🆕 New Features 
 
 ### 🎮 **Interactive Mode**
 
