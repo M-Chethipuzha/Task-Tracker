@@ -59,7 +59,7 @@ You'll see something like this:
 ```
 ╔════════════════════════════════════════════════════════════════╗
 ║                    Task Tracker Interactive Mode               ║
-║                         Phase 3 - v3.0.0                      ║
+║                         Phase 3 - v3.0.0                       ║
 ╚════════════════════════════════════════════════════════════════╝
 
 Welcome to Task Tracker Interactive Mode!
